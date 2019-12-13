@@ -1,0 +1,91 @@
+// vwvh工具方法
+$ui-width: 1283px;
+$ui-height: 737px;
+@mixin widescreen {
+  @media screen and (max-aspect-ratio: 16/9){
+    & {
+      @content;
+    }
+  }
+}
+@function px2vw($px){
+  @return $px / $ui-width * 100vw;
+}
+@function px2vh($px){
+  @return $px / $ui-height * 100vh;
+}
+
+@function px2vw4wide($px) {
+  @return $px / $ui-width * 100vw;
+}
+@mixin res-size($args...) {
+  & {
+    @each $property, $px in keywords($args) {
+      #{$property}: px2vh($px);
+    }
+  }
+  @include widescreen {
+    @each $property, $px in keywords($args) {
+      #{$property}: px2vw4wide($px);
+    }
+  }
+}
+@mixin res-size-important($args...) {
+  & {
+    @each $property, $px in keywords($args) {
+      #{$property}: px2vh($px) !important;
+    }
+  }
+  @include widescreen {
+    @each $property, $px in keywords($args) {
+      #{$property}: px2vh4wide($px) !important;
+    }
+  }
+}
+@mixin ellipsis-line-middle($line){
+  overflow: hidden;
+  -webkit-line-clamp: $line;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+   text-overflow:ellipsis;
+   display: -webkit-box;
+   -webkit-box-pack: center;
+   -webkit-box-align: center;
+   word-break: break-word;
+   	/*! autoprefixer: on */
+}
+
+// css引入
+@import './font/index.css';
+@import './reset.scss';
+@import './animation.scss';
+
+
+// 字体管理
+
+//中文字体
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+
+// 越南字体
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap');
+
+@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+
+// 泰国
+@import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+
+$base-font-family:'Teko-Regular';
+$th-font-family: 'Kanit', sans-serif;
+
+html:lang(th){
+  body,div,span,p,ul,li,a{
+    font-family:$th-font-family !important;
+  }
+}
+// 业务样式
+.App{
+  font-family:$base-font-family;
+  .App-header{
+    @include res-size($font-size:40px)
+  }
+}
