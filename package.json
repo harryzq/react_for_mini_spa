@@ -13,6 +13,7 @@
     "react-responsive-modal": "^4.0.1",
     "react-scripts": "3.3.0",
     "react-slick": "^0.25.2",
+    "slick-carousel": "^1.8.1",
     "sweetalert2": "^9.5.3"
   },
   "scripts": {
@@ -35,5 +36,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^2.3.0"
   }
 }

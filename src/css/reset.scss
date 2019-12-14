@@ -117,12 +117,14 @@ button{
 i{
   font-style: normal;
 }
+html,body,#root{
+  width: 100vw;
+  height: 100vh;
+}
 body{
-    width:100%;
-    height: 100%;
     padding: 0px;
     margin: 0px;
-    background: #091117;
+    // background: #091117;
     overflow: hidden;
-    color: #fff;
+    // color: #fff;
 }

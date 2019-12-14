@@ -59,7 +59,8 @@ $ui-height: 737px;
 @import './font/index.css';
 @import './reset.scss';
 @import './animation.scss';
-
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 
 // 字体管理
 
@@ -85,7 +86,26 @@ html:lang(th){
 // 业务样式
 .App{
   font-family:$base-font-family;
-  .App-header{
-    @include res-size($font-size:40px)
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  .slider-img-warp{
+    background-color: rgba(252, 103, 103, 0.6);
+    @include res-size(
+      $height:400px,
+      $width:300px
+    )
+  }
+  .slider1{
+    background-color: rgba(59, 101, 216, 0.6);
+  }
+  .slider2{
+    background-color: rgba(235, 200, 103, 0.6);
+  }
+  .slick-next {
+    right: 0;
+  }
+  .slick-prev {
+    left: 0;
   }
 }

@@ -1,5 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+基于官方脚手架搭建,移动端适配的小型应用
 ## Available Scripts
 
 In the project directory, you can run:
