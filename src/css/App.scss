@@ -2,16 +2,16 @@
 $ui-width: 1283px;
 $ui-height: 737px;
 @mixin widescreen {
-  @media screen and (max-aspect-ratio: 16/9){
+  @media screen and (max-aspect-ratio: 16/9) {
     & {
       @content;
     }
   }
 }
-@function px2vw($px){
+@function px2vw($px) {
   @return $px / $ui-width * 100vw;
 }
-@function px2vh($px){
+@function px2vh($px) {
   @return $px / $ui-height * 100vh;
 }
 
@@ -42,64 +42,126 @@ $ui-height: 737px;
     }
   }
 }
-@mixin ellipsis-line-middle($line){
+@mixin ellipsis-line-middle($line) {
   overflow: hidden;
   -webkit-line-clamp: $line;
   /* autoprefixer: off */
   -webkit-box-orient: vertical;
-   text-overflow:ellipsis;
-   display: -webkit-box;
-   -webkit-box-pack: center;
-   -webkit-box-align: center;
-   word-break: break-word;
-   	/*! autoprefixer: on */
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  word-break: break-word;
+  /*! autoprefixer: on */
 }
 
 // css引入
-@import './font/index.css';
-@import './reset.scss';
-@import './animation.scss';
+@import "./font/index.css";
+@import "./reset.scss";
+@import "./animation.scss";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
-
 // 字体管理
 
 //中文字体
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
 
 // 越南字体
-@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap");
 
-@import url('https://fonts.googleapis.com/css?family=Anton&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Anton&display=swap");
 
 // 泰国
-@import url('https://fonts.googleapis.com/css?family=Kanit&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Kanit&display=swap");
 
-$base-font-family:'Teko-Regular';
-$th-font-family: 'Kanit', sans-serif;
+$base-font-family: "Teko-Regular";
+$th-font-family: "Kanit", sans-serif;
 
-html:lang(th){
-  body,div,span,p,ul,li,a{
-    font-family:$th-font-family !important;
+html:lang(th) {
+  body,
+  div,
+  span,
+  p,
+  ul,
+  li,
+  a {
+    font-family: $th-font-family !important;
   }
 }
+// 组件样式
+
+
+.mask{
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	position: fixed;
+	background-color: #000;
+	opacity: 0.8;
+	z-index: 100;
+}
+
+.none{
+	display: none !important;
+}
+.dialog{
+	position: fixed;
+	width: 101%;
+	height: 101%;
+	left: 0;
+	top: 0;
+	display: flex;
+  z-index: 100;
+}
+
+.dialog.outter-dialog{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 101;
+	left: 50%;
+	top: 50%;
+}
+.outter-dialog.loading img{
+	width: px2vw(80px)
+}
+
+.loading-mask{
+	z-index: 100;
+}
+.rule-mask{
+	z-index: 15;
+	// height: px2vh(644px);
+	height: 100%;
+	top: auto;
+	bottom: 0;
+}
+.loading-mask{
+	z-index: 100;
+}
+
 // 业务样式
-.App{
-  font-family:$base-font-family;
+.App {
+  font-family: $base-font-family;
+  width: 100vw;
+  height: 100vh;
+}
+.home-page {
+  font-family: $base-font-family;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  .slider-img-warp{
+  .slider-img-warp {
     background-color: rgba(252, 103, 103, 0.6);
-    @include res-size(
-      $height:400px,
-      $width:300px
-    )
+    @include res-size($height: 400px, $width: 300px);
   }
-  .slider1{
+  .slider1 {
     background-color: rgba(59, 101, 216, 0.6);
   }
-  .slider2{
+  .slider2 {
     background-color: rgba(235, 200, 103, 0.6);
   }
   .slick-next {

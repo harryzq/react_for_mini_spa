@@ -92,10 +92,9 @@ const getAndStoreParams = lang => {
   let vars, access_token;
   if (query) {
     vars = query.split("&");
-    if(vars[1]){
+    if (vars[1]) {
       access_token = vars[1].split("=")[1];
     }
-    
   }
 
   if (!access_token) {
