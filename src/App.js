@@ -4,7 +4,7 @@ import HomePage from "./components/HomePage";
 import { reducer } from "./reducer";
 import axios from "axios";
 import './css/App.scss'
-import DisplayMask from './components/DisplayMask'
+import PleaseRoate from './components/PleaseRoate'
 //axios默认配置
 axios.defaults.withCredentials = true;
 axios.defaults.timeout = 10000; //超时响应
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <AppContext.Provider value={{ state, dispatch: dispatch }}>
-      <DisplayMask></DisplayMask>
+      <PleaseRoate></PleaseRoate>
       <HomePage></HomePage>
     </AppContext.Provider>
   );

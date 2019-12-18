@@ -90,7 +90,6 @@ html:lang(th) {
 }
 // 组件样式
 
-
 .mask{
 	width: 100%;
 	height: 100%;
@@ -142,7 +141,32 @@ html:lang(th) {
 .loading-mask{
 	z-index: 100;
 }
+.show {
+    display: block;
+}
+.hidden {
+    display: none;
+}
 
+// Loading
+.ga-loading{
+    width: 100%;
+    height:  100%;;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    img{
+      width: 20vh;
+      height: 20vh;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-left: -10vh;
+      margin-top: -10vh;
+      z-index: 999;
+    }
+}
 // 业务样式
 .App {
   font-family: $base-font-family;
@@ -166,8 +190,10 @@ html:lang(th) {
   }
   .slick-next {
     right: 0;
+    z-index: 1;
   }
   .slick-prev {
+    z-index: 1;
     left: 0;
   }
 }
